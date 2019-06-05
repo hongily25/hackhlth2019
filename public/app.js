@@ -1,3 +1,5 @@
+window.blockstack = require('blockstack')
+
 document.addEventListener("DOMContentLoaded", event => {
   const appConfig = new blockstack.AppConfig()
   const userSession = new blockstack.UserSession({ appConfig: appConfig })
