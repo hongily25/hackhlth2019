@@ -1,4 +1,4 @@
-import blockstack from 'blockstack';
+import defaultExport from "blockstack";
 
 document.addEventListener("DOMContentLoaded", event => {
   const appConfig = new blockstack.AppConfig()
