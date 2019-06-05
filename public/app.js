@@ -1,4 +1,4 @@
-window.blockstack = require('blockstack')
+const blockstack = require('blockstack')
 
 document.addEventListener("DOMContentLoaded", event => {
   const appConfig = new blockstack.AppConfig()
