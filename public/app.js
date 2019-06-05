@@ -1,4 +1,4 @@
-import * as blockstack from 'blockstack'
+import * as blockstack from '../node_modules/blockstack'
 
 document.addEventListener("DOMContentLoaded", event => {
   const appConfig = new blockstack.AppConfig()
