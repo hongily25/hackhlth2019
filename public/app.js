@@ -1,5 +1,3 @@
-import * as blockstack from '../node_modules/blockstack.js'
-
 document.addEventListener("DOMContentLoaded", event => {
   const appConfig = new blockstack.AppConfig()
   const userSession = new blockstack.UserSession({ appConfig: appConfig })
