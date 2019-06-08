@@ -15,7 +15,7 @@ app.use(allowCrossDomain)
 app.use('/', express.static(`${__dirname}/public`))
 
 app.get('/test', function(req, res, next) {
-  res.send('hello');
+  return res.send('hello');
 });
 
 app.listen(port, async (err) => {
