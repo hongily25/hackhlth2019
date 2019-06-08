@@ -2,11 +2,11 @@
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Headers: "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding"
   Access-Control-Allow-Methods: "POST, GET, OPTIONS, DELETE, PUT"
-/manifest.json
+/public/manifest.json
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Headers: "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding"
   Access-Control-Allow-Methods: "POST, GET, OPTIONS, DELETE, PUT"
-  /public/index.html
+/public/index.html
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Headers: "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding"
   Access-Control-Allow-Methods: "POST, GET, OPTIONS, DELETE, PUT"
