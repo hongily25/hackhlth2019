@@ -24,7 +24,6 @@ function getAccounts (req, res, next) {
 }
 
 app.use(allowCrossDomain)
-app.get('/test', (req, res) => res.send('Hello World!'))
 app.use('/', express.static(`${__dirname}/public`))
 app.use(getAccounts)
 
