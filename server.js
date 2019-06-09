@@ -27,6 +27,10 @@ app.use(allowCrossDomain)
 app.use('/', express.static(`${__dirname}/public`))
 app.use(getAccounts)
 
+app.use(function (req, res, next) {
+  res.status(404).send("Sorry can't find that!")
+})
+
 
 app.listen(port, async (err) => {
   if (err) { console.error('Something bad happend', err) }
