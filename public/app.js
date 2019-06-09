@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", event => {
   const appConfig = new blockstack.AppConfig()
   const userSession = new blockstack.UserSession({ appConfig: appConfig })
-  let coinbase = require('coinbase');
+  
   let client   = new coinbase.Client({'apiKey': 'pwzHCVdKTg7OwlUG', 'apiSecret': 'AC8PntCX48C8MvQPbCnl0Dxp4vXlQAIT'});
 
 
