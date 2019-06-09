@@ -24,12 +24,10 @@ function getAccounts (req, res, next) {
 }
 
 app.use(allowCrossDomain)
+app.get('/test', (req, res) => res.send('Hello World!'))
 app.use('/', express.static(`${__dirname}/public`))
 app.use(getAccounts)
 
-app.get('/test', function(req, res, next) {
-  return res.send('hello');
-});
 
 app.listen(port, async (err) => {
   if (err) { console.error('Something bad happend', err) }
