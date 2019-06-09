@@ -12,20 +12,8 @@ function allowCrossDomain (req, res, next) {
   next()
 }
 
-let Client = coinbase.Client;
-let client = new Client({'apiKey': 'pwzHCVdKTg7OwlUG', 'apiSecret': 'AC8PntCX48C8MvQPbCnl0Dxp4vXlQAIT'});
-
-function getAccounts (req, res, next) { 
-  client.getAccounts({}, function(err, accounts) {
-    accounts.forEach(function(acct) {
-      console.log('my bal: ' + acct.balance.amount + ' for ' + acct.name);
-    });
-  });
-}
-
 app.use(allowCrossDomain)
 app.use('/', express.static(`${__dirname}/public`))
-app.use(getAccounts)
 
 app.use(function (req, res, next) {
   res.status(404).send("Sorry can't find that!")
