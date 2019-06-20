@@ -1,2 +1,2 @@
 window.blockstack = require('blockstack')
-window.coinbase = requrie('coinbase')
+window.coinbase = require('coinbase')
