@@ -1,16 +1,6 @@
 document.addEventListener("DOMContentLoaded", event => {
   const appConfig = new blockstack.AppConfig()
   const userSession = new blockstack.UserSession({ appConfig: appConfig })
-  
-  let client   = new coinbase.Client({'apiKey': 'pwzHCVdKTg7OwlUG', 'apiSecret': 'AC8PntCX48C8MvQPbCnl0Dxp4vXlQAIT'});
-
-
-  client.getAccounts({}, function(err, accounts) {
-    accounts.forEach(function(acct) {
-      console.log('my bal: ' + acct.balance.amount + ' for ' + acct.name);
-    });
-  });
-
 
   document.getElementById('signin-button').addEventListener('click', event => {
     event.preventDefault()
