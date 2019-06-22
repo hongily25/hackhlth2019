@@ -20,14 +20,14 @@ app.use(function (req, res, next) {
 })
 
 app.get('/em', function(req, res) {
-  res.send('hello world');
+  return res.send('hello world');
 })
 
-/*
+
 
 app.listen(port, async (err) => {
   if (err) { console.error('Something bad happend', err) }
 
   console.log(`App running at: http://localhost:${port}`)
   await open(`http://localhost:${port}`)
-}) */
+}) 
