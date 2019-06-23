@@ -1,5 +1,5 @@
 
-var blockstack = require('blockstack');
+window.blockstack = require('blockstack');
 
 document.addEventListener("DOMContentLoaded", event => {
   const appConfig = new blockstack.AppConfig()
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", event => {
 
   if (userSession.isUserSignedIn()) {
     const profile = userSession.loadUserData().profile;
-    console.log('profile', profile);
+    console.log('profile test: ', profile);
     showProfile(profile)
   } else if (userSession.isSignInPending()) {
     userSession.handlePendingSignIn().then(userData => {
