@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", event => {
 
   if (userSession.isUserSignedIn()) {
     const profile = userSession.loadUserData().profile;
-    console.log('profile test: ', profile);
+    console.log('profile test2: ', profile);
     showProfile(profile)
   } else if (userSession.isSignInPending()) {
     userSession.handlePendingSignIn().then(userData => {
