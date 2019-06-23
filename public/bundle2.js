@@ -22855,7 +22855,7 @@ check.toJSON = function () { return 'witnessScriptHash input' }
 
 module.exports = { check }
 
-}).call(this,{"isBuffer":require("../../../../usr/local/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+}).call(this,{"isBuffer":require("../../../../../../../../usr/local/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
 },{"../../../../../../../../usr/local/lib/node_modules/browserify/node_modules/is-buffer/index.js":502,"../../script":52,"../../types":78,"../multisig/":55,"../pubkey/":59,"../pubkeyhash/":62,"typeforce":314}],75:[function(require,module,exports){
 // OP_0 {scriptHash}
 
@@ -38251,7 +38251,7 @@ exports.update = function(arr, parent) {
 
 // module.exports = $.extend(exports);
 
-}).call(this,{"isBuffer":require("../../../../usr/local/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+}).call(this,{"isBuffer":require("../../../../../../usr/local/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
 },{"../../../../../../usr/local/lib/node_modules/browserify/node_modules/is-buffer/index.js":502,"htmlparser2":225}],149:[function(require,module,exports){
 /**
  * Module dependencies
@@ -69478,7 +69478,7 @@ module.exports = function (password, salt, iterations, keylen) {
   }
 }
 
-}).call(this,{"isBuffer":require("../../../../usr/local/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+}).call(this,{"isBuffer":require("../../../../../../usr/local/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
 },{"../../../../../../usr/local/lib/node_modules/browserify/node_modules/is-buffer/index.js":502}],268:[function(require,module,exports){
 var md5 = require('create-hash/md5')
 var RIPEMD160 = require('ripemd160')
@@ -78938,7 +78938,7 @@ for (var typeName in types) {
 
 module.exports = types
 
-}).call(this,{"isBuffer":require("../../../../usr/local/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+}).call(this,{"isBuffer":require("../../../../../usr/local/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
 },{"../../../../../usr/local/lib/node_modules/browserify/node_modules/is-buffer/index.js":502,"./errors":312,"./native":315}],314:[function(require,module,exports){
 var ERRORS = require('./errors')
 var NATIVE = require('./native')
@@ -83670,7 +83670,7 @@ function getZoneFileTemplate() {
 }
 },{}],402:[function(require,module,exports){
 
-var blockstack = require('blockstack');
+window.blockstack = require('blockstack');
 
 document.addEventListener("DOMContentLoaded", event => {
   const appConfig = new blockstack.AppConfig()
@@ -83700,7 +83700,7 @@ document.addEventListener("DOMContentLoaded", event => {
 
   if (userSession.isUserSignedIn()) {
     const profile = userSession.loadUserData().profile;
-    console.log('profile', profile);
+    console.log('profile test: ', profile);
     showProfile(profile)
   } else if (userSession.isSignInPending()) {
     userSession.handlePendingSignIn().then(userData => {
