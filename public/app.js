@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", event => {
   function showProfile (profile) {
     let person = new blockstack.Person(profile);
     console.log('user', person);
-    document.getElementById('heading-name').innerHTML = person.name() ? person.name() : "Nameless Person"
+    document.getElementById('heading-name').innerHTML = person.getName() ? person.getName() : "Nameless Person"
     if(person.avatarUrl()) {
       document.getElementById('avatar-image').setAttribute('src', person.avatarUrl())
     }
