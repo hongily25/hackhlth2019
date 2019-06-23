@@ -1,6 +1,3 @@
-window.blockstack = require('blockstack')
-newFunction();
+import { blockstack } from '../node_modules/blockstack';
 
-function newFunction() {
-    window.coinbase = require('coinbase');
-}
+window.blockstack = blockstack;
