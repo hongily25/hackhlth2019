@@ -1,6 +1,2 @@
-window.blockstack = require('blockstack')
-newFunction();
-
-function newFunction() {
-    window.coinbase = require('coinbase');
-}
+var blockstack = require('blockstack');
+var coinbase = require('coinbase');
