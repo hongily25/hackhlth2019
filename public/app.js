@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", event => {
 
   function showProfile (profile) {
     let person = new blockstack.Person(profile);
-    console.log('user', person);
-    document.getElementById('heading-name').innerHTML = person.getName() ? person.getName() : "world"
+    console.log('person', person);
+    document.getElementById('heading-name').innerHTML = person.name() ? person.name() : "world"
     if(person.avatarUrl()) {
       document.getElementById('avatar-image').setAttribute('src', person.avatarUrl())
     }
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", event => {
 
   if (userSession.isUserSignedIn()) {
     const profile = userSession.loadUserData().profile;
-    console.log('profile test2: ', profile);
+    console.log('profile test3: ', profile);
     showProfile(profile)
   } else if (userSession.isSignInPending()) {
     userSession.handlePendingSignIn().then(userData => {
