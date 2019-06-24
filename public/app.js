@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", event => {
   function showProfile (profile) {
     let person = new blockstack.Person(profile);
     console.log('person', person);
-    document.getElementById('heading-name').innerHTML = person.name() ? person.name() : ""
+    document.getElementById('heading-name').innerHTML = person.name() ? person.name() : "there"
     if(person.avatarUrl()) {
       document.getElementById('avatar-image').setAttribute('src', person.avatarUrl())
     }
@@ -33,8 +33,7 @@ document.addEventListener("DOMContentLoaded", event => {
     console.log('profile test3: ', profile);
     showProfile(profile);
     listExpense();
-
-    var userSession = new UserSession()
+    
     let options = {
       encrypt: false
     }
