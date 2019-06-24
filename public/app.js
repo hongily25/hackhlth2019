@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", event => {
     userSession.getFile("/hello.txt", options)
     .then((fileContents) => {
         // get the contents of the file /hello.txt
-        assert(fileContents === "hello world!");
         console.log('fileContents', fileContents);
     });
   }
