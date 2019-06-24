@@ -35,11 +35,17 @@
         </div>
         <div class="panel-landing hide" id="crypto">
           <div id="expenses"></div>
-          <input id="expense-category">
-          <input id="expense-amount">
-          <div class="btn btn-primary" id="save-expense">
-            Add
-          </div>
+          <table>
+            <tr>
+              <td><h3>Category</h3></td>
+              <td>Expense Amount</td>
+              <td rowspan="2"><div class="btn btn-primary" id="save-expense">Add</div></td>
+            </tr>
+            <tr>
+              <td><input id="expense-category"> </td>
+              <td><input id="expense-amount"></td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
