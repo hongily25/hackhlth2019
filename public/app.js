@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", event => {
   function showProfile (profile) {
     let person = new blockstack.Person(profile);
     console.log('person', person);
-    document.getElementById('heading-name').innerHTML = person.name() ? person.name() : person.us
+    document.getElementById('heading-name').innerHTML = person.name() ? person.name() : "there";
     if(person.avatarUrl()) {
       document.getElementById('avatar-image').setAttribute('src', person.avatarUrl())
     }
@@ -27,6 +27,9 @@ document.addEventListener("DOMContentLoaded", event => {
   function listExpense (userSession) {
     document.getElementById('crypto').style.display = 'block';
     console.log('userSession', userSession);
+    let options = {
+      decrypt: false
+    }
 
     userSession.getFile("/hello.txt", options)
     .then((fileContents) => {
