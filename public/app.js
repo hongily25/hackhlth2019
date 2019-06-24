@@ -32,7 +32,16 @@ document.addEventListener("DOMContentLoaded", event => {
     const profile = userSession.loadUserData().profile;
     console.log('profile test3: ', profile);
     showProfile(profile);
-    listExpense;
+    listExpense();
+
+    var userSession = new UserSession()
+    let options = {
+      encrypt: false
+    }
+    userSession.putFile("/hello.txt", "hello world!", options)
+    .then(() => {
+        // /hello.txt exists now, and has the contents "hello world!".
+    })
 
 
   } else if (userSession.isSignInPending()) {
