@@ -1,6 +1,3 @@
-
-window.blockstack = require('blockstack');
-
 document.addEventListener("DOMContentLoaded", event => {
   const appConfig = new blockstack.AppConfig()
   const userSession = new blockstack.UserSession({ appConfig: appConfig })
@@ -27,12 +24,17 @@ document.addEventListener("DOMContentLoaded", event => {
     document.getElementById('section-2').style.display = 'block'
   }
 
+  function listExpense () {
+    document.getElementById('crypto').style.display = 'block';
+  }
+
   if (userSession.isUserSignedIn()) {
     const profile = userSession.loadUserData().profile;
     console.log('profile test3: ', profile);
-    showProfile(profile)
+    showProfile(profile);
+    listExpense;
 
-    
+
   } else if (userSession.isSignInPending()) {
     userSession.handlePendingSignIn().then(userData => {
       window.location = window.location.origin
