@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", event => {
     .then((fileContents) => {
         // get the contents of the file /hello.txt
         console.log('fileContents', fileContents);
+        document.getElementById('expenses').innerHTML = fileContents;
     });
   }
 
