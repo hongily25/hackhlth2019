@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", event => {
     .then((fileContents) => {
         // get the contents of the file /hello.txt
         console.log('getExpenes', fileContents);
+        const prevExpenses = fileContents;
         const category = document.getElementById('expense-category').value;
         const expenseAmount = document.getElementById('expense-amount').value;
         const expense = prevExpenses + '\n' + category + ' ' + expenseAmount;
