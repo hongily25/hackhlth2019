@@ -48,10 +48,12 @@ document.addEventListener("DOMContentLoaded", event => {
     let options = {
       decrypt: false
     }
-    userSession.getFile("/hello.txt", options)
+    userSession.getFile("/hello.txt", {
+      decrypt: false
+    })
     .then((fileContents) => {
         // get the contents of the file /hello.txt
-        console.log('fileContents', fileContents);
+        console.log('getExpenses', fileContents);
         return fileContents;
     });
   }
@@ -60,19 +62,26 @@ document.addEventListener("DOMContentLoaded", event => {
     let options = {
       encrypt: false
     }
-    const prevExpenses = await getExpenses(userSession);
-    const category = document.getElementById('expense-category').value;
-    const expenseAmount = document.getElementById('expense-amount').value;
-    const expense = prevExpenses + '\n' + category + ' ' + expenseAmount;
-    console.log('prev expenses', prevExpenses);
-    console.log('category input', category);
-    console.log('amt input', expenseAmount);
-    console.log('expense input', expense);
-    userSession.putFile("/hello.txt", expense , options)
-    .then(() => {
-        listExpense(userSession);
-        // /hello.txt exists now, and has the contents "hello world!".
+    userSession.getFile("/hello.txt", {
+      decrypt: false
     })
+    .then((fileContents) => {
+        // get the contents of the file /hello.txt
+        console.log('getExpenes', fileContents);
+        const category = document.getElementById('expense-category').value;
+        const expenseAmount = document.getElementById('expense-amount').value;
+        const expense = prevExpenses + '\n' + category + ' ' + expenseAmount;
+        console.log('prev expenses', prevExpenses);
+        console.log('category input', category);
+        console.log('amt input', expenseAmount);
+        console.log('expense input', expense);
+        userSession.putFile("/hello.txt", expense , options)
+        .then(() => {
+            listExpense(userSession);
+            // /hello.txt exists now, and has the contents "hello world!".
+        })
+    });
+
   }
 
   if (userSession.isUserSignedIn()) {
