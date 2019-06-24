@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", event => {
     });
   }
 
-  function getExpenses(userSession) {
+  async function getExpenses(userSession) {
     let options = {
       decrypt: false
     }
@@ -56,11 +56,11 @@ document.addEventListener("DOMContentLoaded", event => {
     });
   }
 
-  function saveExpense(userSession) {
+  async function saveExpense(userSession) {
     let options = {
       encrypt: false
     }
-    const prevExpenses = getExpenses(userSession);
+    const prevExpenses = await getExpenses(userSession);
     const category = document.getElementById('expense-category').value;
     const expenseAmount = document.getElementById('expense-amount').value;
     const expense = prevExpenses + '\n' + category + ' ' + expenseAmount;
