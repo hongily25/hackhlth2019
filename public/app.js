@@ -48,7 +48,13 @@ document.addEventListener("DOMContentLoaded", event => {
     let options = {
       encrypt: false
     }
-    userSession.putFile("/hello.txt", "hello emily!", options)
+    const category = document.getElementById('expense-category').value;
+    const expenseAmount = document.getElementById('expense-amount').value;
+    const expense = category + expenseAmount;
+    console.log('category input', category);
+    console.log('amt input', amount);
+    console.log('expense input', expense);
+    userSession.putFile("/hello.txt", expense , options)
     .then(() => {
         // /hello.txt exists now, and has the contents "hello world!".
     })
