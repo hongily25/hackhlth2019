@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", event => {
     console.log('expense input', expense);
     userSession.putFile("/hello.txt", expense , options)
     .then(() => {
+        listExpense(userSession);
         // /hello.txt exists now, and has the contents "hello world!".
     })
   }
