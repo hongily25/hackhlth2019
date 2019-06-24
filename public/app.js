@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", event => {
 
   document.getElementById('save-expense').addEventListener('click', event => {
     event.preventDefault()
-    saveExpense();
+    saveExpense(userSession);
   })
 
   function showProfile (profile) {
