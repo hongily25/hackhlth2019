@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", event => {
         const prevExpenses = fileContents ? fileContents : '' ;
         const category = document.getElementById('expense-category').value;
         const expenseAmount = document.getElementById('expense-amount').value;
-        const expense = prevExpenses + '<br>' + category + ' ' + expenseAmount;
+        const expense = prevExpenses + category + ' ' + expenseAmount + + '<br>';
         console.log('prev expenses', prevExpenses);
         console.log('category input', category);
         console.log('amt input', expenseAmount);
