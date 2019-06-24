@@ -13,6 +13,11 @@ document.addEventListener("DOMContentLoaded", event => {
     window.location = window.location.origin
   })
 
+  document.getElementById('save-expense').addEventListener('click', event => {
+    event.preventDefault()
+    saveExpense();
+  })
+
   function showProfile (profile) {
     let person = new blockstack.Person(profile);
     console.log('person', person);
@@ -39,20 +44,21 @@ document.addEventListener("DOMContentLoaded", event => {
     });
   }
 
+  function saveExpense(userSession) {
+    let options = {
+      encrypt: false
+    }
+    userSession.putFile("/hello.txt", "hello emily!", options)
+    .then(() => {
+        // /hello.txt exists now, and has the contents "hello world!".
+    })
+  }
+
   if (userSession.isUserSignedIn()) {
     const profile = userSession.loadUserData().profile;
     console.log('profile test3: ', profile);
     showProfile(profile);
     listExpense(userSession);
-
-    let options = {
-      encrypt: false
-    }
-    userSession.putFile("/hello.txt", "hello world!", options)
-    .then(() => {
-        // /hello.txt exists now, and has the contents "hello world!".
-    })
-
 
   } else if (userSession.isSignInPending()) {
     userSession.handlePendingSignIn().then(userData => {
