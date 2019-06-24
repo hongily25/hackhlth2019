@@ -40,21 +40,7 @@ document.addEventListener("DOMContentLoaded", event => {
     .then((fileContents) => {
         // get the contents of the file /hello.txt
         console.log('fileContents', fileContents);
-        document.getElementById('expenses').innerHTML = fileContents;
-    });
-  }
-
-  async function getExpenses(userSession) {
-    let options = {
-      decrypt: false
-    }
-    userSession.getFile("/hello.txt", {
-      decrypt: false
-    })
-    .then((fileContents) => {
-        // get the contents of the file /hello.txt
-        console.log('getExpenses', fileContents);
-        return fileContents;
+        document.getElementById('expenses').innerHTML = fileContents ? fileContents : '';
     });
   }
 
