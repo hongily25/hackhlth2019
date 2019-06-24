@@ -122,6 +122,11 @@ body {
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
 }
 
+#crypto-container {
+  display: flex;
+  justify-content: center;
+}
+
 .expense-table h4 {
   margin-bottom: .5rem;
 }
