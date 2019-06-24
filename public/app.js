@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", event => {
 
   function getExpenses(userSession) {
     let options = {
-      encrypt: false
+      decrypt: false
     }
     userSession.getFile("/hello.txt", options)
     .then((fileContents) => {
