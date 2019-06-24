@@ -44,13 +44,27 @@ document.addEventListener("DOMContentLoaded", event => {
     });
   }
 
+  function getExpenses(userSession) {
+    let options = {
+      encrypt: false
+    }
+    userSession.getFile("/hello.txt", options)
+    .then((fileContents) => {
+        // get the contents of the file /hello.txt
+        console.log('fileContents', fileContents);
+        return fileContents;
+    });
+  }
+
   function saveExpense(userSession) {
     let options = {
       encrypt: false
     }
+    const prevExpenses = getExpenses(userSession);
     const category = document.getElementById('expense-category').value;
     const expenseAmount = document.getElementById('expense-amount').value;
-    const expense = category + expenseAmount;
+    const expense = prevExpenses + '\n' + category + ' ' + expenseAmount;
+    console.log('prev expenses', prevExpenses);
     console.log('category input', category);
     console.log('amt input', expenseAmount);
     console.log('expense input', expense);
@@ -66,7 +80,6 @@ document.addEventListener("DOMContentLoaded", event => {
     console.log('profile test3: ', profile);
     showProfile(profile);
     listExpense(userSession);
-
   } else if (userSession.isSignInPending()) {
     userSession.handlePendingSignIn().then(userData => {
       window.location = window.location.origin
