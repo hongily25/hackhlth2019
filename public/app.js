@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", event => {
     const expenseAmount = document.getElementById('expense-amount').value;
     const expense = category + expenseAmount;
     console.log('category input', category);
-    console.log('amt input', amount);
+    console.log('amt input', expenseAmount);
     console.log('expense input', expense);
     userSession.putFile("/hello.txt", expense , options)
     .then(() => {
