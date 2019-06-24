@@ -36,9 +36,9 @@ document.addEventListener("DOMContentLoaded", event => {
       decrypt: false
     }
 
-    userSession.getFile("/hello.txt", options)
+    userSession.getFile("/expenses.txt", options)
     .then((fileContents) => {
-        // get the contents of the file /hello.txt
+        // get the contents of the file /expenses.txt
         console.log('fileContents', fileContents);
         document.getElementById('expenses').innerHTML = fileContents ? fileContents : '';
     });
@@ -48,11 +48,11 @@ document.addEventListener("DOMContentLoaded", event => {
     let options = {
       encrypt: false
     }
-    userSession.getFile("/hello.txt", {
+    userSession.getFile("/expenses.txt", {
       decrypt: false
     })
     .then((fileContents) => {
-        // get the contents of the file /hello.txt
+        // get the contents of the file /expenses.txt
         console.log('getExpenes', fileContents);
         const prevExpenses = fileContents ? fileContents : '' ;
         const category = document.getElementById('expense-category').value;
@@ -62,10 +62,10 @@ document.addEventListener("DOMContentLoaded", event => {
         console.log('category input', category);
         console.log('amt input', expenseAmount);
         console.log('expense input', expense);
-        userSession.putFile("/hello.txt", expense , options)
+        userSession.putFile("/expenses.txt", expense , options)
         .then(() => {
             listExpense(userSession);
-            // /hello.txt exists now, and has the contents "hello world!".
+            // /expenses.txt exists now, and has the contents "hello world!".
         })
     });
 
