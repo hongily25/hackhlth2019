@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", event => {
     saveExpense(userSession);
   })
 
-  document.getElementById('delete-btn').addEventListener('click', event => {
+  document.getElementById('delete-button').addEventListener('click', event => {
     event.preventDefault()
     deleteList(userSession);
   })
