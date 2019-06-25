@@ -150,6 +150,6 @@ body {
   padding-left: 1rem;
 }
 
-.lead {
+.panel-welcome > .lead {
   float: right;
 }

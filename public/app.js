@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", event => {
         console.log('expenses in listExpense', expenses);
         let rows = '';
         expenses.forEach(item => {
-          rows += item.category + ' ' + item.expenseAmount + '<br>';
+          rows += item.item + ' ' + item.category + ' ' + item.expenseAmount + '<br>';
         });
         document.getElementById('expenses').innerHTML = rows;
 });
@@ -64,9 +64,11 @@ document.addEventListener("DOMContentLoaded", event => {
         var expenses = JSON.parse(fileContents || '[]');
         console.log('old expenses in saveExpense', expenses);
 
+        const item = document.getElementById('expense-item').value;
         const category = document.getElementById('expense-category').value;
-        const expenseAmount = parseInt(document.getElementById('expense-amount').value);
+        const expenseAmount = parseFloat(document.getElementById('expense-amount').value);
         const expense = [...expenses, { 
+                item: item,
                 category: category,
                 expenseAmount: expenseAmount,
               }];

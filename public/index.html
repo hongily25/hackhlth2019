@@ -36,6 +36,7 @@
           </div>
           <table class="expense-table">
             <tr>
+              <td><h4>Item</h4></td>
               <td><h4>Category</h4></td>
               <td><h4>Amount</h4></td>
               <td rowspan="2"><div class="btn btn-primary" id="save-expense">Add</div></td>
@@ -43,7 +44,12 @@
             <tr>
               <td>
                   <div class="input-group mb-3">
-                      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="expense-category">
+                      <input type="text" class="form-control" aria-label="Item" id="expense-item">
+                  </div>
+              </td>
+              <td>
+                  <div class="input-group mb-3">
+                      <input type="text" class="form-control" aria-label="Category" id="expense-category">
                   </div>
               </td>
               <td>
