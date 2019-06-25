@@ -153,3 +153,17 @@ body {
 .panel-welcome > .lead {
   float: right;
 }
+
+#expense-item {
+  margin-right: .5rem;
+}
+
+#save-expense {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+#deleteExpenses {
+  display: flex;
+  justify-content: center;
+}

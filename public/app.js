@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", event => {
 
   function listExpense (userSession) {
     document.getElementById('crypto').style.display = 'block';
-    document.getElementById('deleteExpenses').style.display = 'block';
+    document.getElementById('deleteExpenses').style.display = 'flex';
     let options = {
       decrypt: false
     }
