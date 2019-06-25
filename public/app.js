@@ -101,6 +101,8 @@ document.addEventListener("DOMContentLoaded", event => {
       if (expenses.length === 1) { 
         document.getElementById('expenses').style.display = 'none';
         document.getElementById('expense-body').innerHTML = '';
+      } else if (expenses.length === 0) {
+        return;
       } else {
         expenses.pop(); 
         console.log('after deleting last item', expenses);
