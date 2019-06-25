@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", event => {
         .then(() => {
           listExpense(userSession);
         })
-      } else {
+      } else if (expenses.length === 1) {
         document.getElementById('expenses').style.display = 'none';
         document.getElementById('expense-body').innerHTML = '';
         deleteFile(userSession);
