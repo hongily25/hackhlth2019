@@ -39,9 +39,9 @@ document.addEventListener("DOMContentLoaded", event => {
     userSession.getFile("/expense3.json", options)
     .then((fileContents) => {
         // get the contents of the file /expenses.txt
-        var expeneses = JSON.parse(fileContents || '[]');
+        var expenses = [];
         console.log('fileContents of listExpense', fileContents);
-        console.log('expenses in listExpense', expeneses);
+        console.log('expenses in listExpense', expenses);
         // document.getElementById('expenses').innerHTML = fileContents ? fileContents : '';
     });
   }
@@ -64,8 +64,8 @@ document.addEventListener("DOMContentLoaded", event => {
         const categoryArray = expenses.category.push(document.getElementById('expense-category').value);
         const expenseAmountArray = expenses.expenseAmount.push(document.getElementById('expense-amount').value);
         const expense = { 
-          category: JSON.stringify(categoryArray),
-          expenseAmount: JSON.stringify(expenseAmountArray),
+          category: categoryArray,
+          expenseAmount: expenseAmountArray,
         };
         // console.log('prev expenses', prevExpenses);
         // console.log('category input', category);
