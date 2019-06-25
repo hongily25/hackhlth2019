@@ -57,8 +57,8 @@ document.addEventListener("DOMContentLoaded", event => {
         var expenses = JSON.parse(fileContents || '[]');
         console.log('expenses in saveExpense', expenses);
         // const prevExpenses = fileContents ? fileContents : '' ;
-        expenses.category = expenses.category ? expenses.category : [];
-        expenses.expenseAmount = expenses.expenseAmount ? expenses.expenseAmount : [];
+        expenses.category = [];
+        expenses.expenseAmount = [];
 
         const categoryArray = expenses.category.push(document.getElementById('expense-category').value);
         const expenseAmountArray = expenses.expenseAmount.push(document.getElementById('expense-amount').value);
