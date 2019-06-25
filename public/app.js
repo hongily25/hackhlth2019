@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", event => {
         var expenses =  JSON.parse(fileContents || '[]');
         console.log('fileContents of listExpense', fileContents);
         console.log('expenses in listExpense', expenses);
-        let rows;
+        let rows = '';
         expenses.forEach(item => {
           rows += item.category + ' ' + item.expenseAmount + '<br>';
         });
