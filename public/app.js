@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", event => {
         // console.log('category input', category);
         // console.log('amt input', expenseAmount);
         // console.log('expense input', expense);
-        userSession.putFile("/expense3.json", expense, options)
+        userSession.putFile("/expense3.json", JSON.stringify(expense), options)
         .then(() => {
             listExpense(userSession);
             // /expenses.txt exists now, and has the contents "hello world!".
