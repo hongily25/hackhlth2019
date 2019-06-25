@@ -166,9 +166,9 @@ body {
   margin-right: .5rem;
 }
 
-#save-expense {
+#save-expense,
+#delete-last {
   margin-right: 1rem;
-  margin-bottom: 1rem;
 }
 
 #deleteExpenses {

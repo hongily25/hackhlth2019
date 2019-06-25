@@ -23,6 +23,11 @@ document.addEventListener("DOMContentLoaded", event => {
     deleteList(userSession);
   })
 
+  document.getElementById('delete-last').addEventListener('click', event => {
+    event.preventDefault()
+    deleteLastItem(userSession);
+  })
+
   function showProfile (profile) {
     let person = new blockstack.Person(profile);
     console.log('person', person);
@@ -86,6 +91,17 @@ document.addEventListener("DOMContentLoaded", event => {
     userSession.deleteFile("/expense5.json")
     .then(() => {
        listExpense(userSession);
+    })
+  }
+
+  function deleteList(userSession) {
+    userSession.getFile("/expense5.json", {
+      decrypt: false
+    })
+    .then((fileContents) => {
+      let expenses = JSON.parse(fileContents || '[]');
+      expenses = expenses.pop();
+      listExpense(userSession)
     })
   }
 
