@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", event => {
     .then((fileContents) => {
         // get the contents of the file /expenses.txt
         var todos = JSON.parse(fileContents || '[]');
-        console.log('fileContents listExpense', fileContents);
         console.log('todos listExpense', todos);
         // document.getElementById('expenses').innerHTML = fileContents ? fileContents : '';
     });
@@ -55,7 +54,6 @@ document.addEventListener("DOMContentLoaded", event => {
     })
     .then((fileContents) => {
         // get the contents of the file /expenses.txt
-        console.log('getExpenses', fileContents);
         var expenses = JSON.parse(fileContents || '[]');
         console.log('expenses in saveExpense', expenses);
         // const prevExpenses = fileContents ? fileContents : '' ;
@@ -81,10 +79,18 @@ document.addEventListener("DOMContentLoaded", event => {
 
   }
 
+  function deleteList(userSession) {
+    userSession.deleteFile("/expenseList.txt")
+    .then(() => {
+       // /hello.txt is now removed.
+    })
+  }
+
   if (userSession.isUserSignedIn()) {
     const profile = userSession.loadUserData().profile;
     console.log('profile test3: ', profile);
     showProfile(profile);
+    deleteList(userSession);
     listExpense(userSession);
   } else if (userSession.isSignInPending()) {
     userSession.handlePendingSignIn().then(userData => {
