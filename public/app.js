@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", event => {
     userSession.deleteFile("/expense5.json")
     .then(() => {
        // /hello.txt is now removed.
+       listExpense(userSession);
     })
   }
 
