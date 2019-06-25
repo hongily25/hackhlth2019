@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", event => {
         var expenses =  JSON.parse(fileContents || '[]');
         console.log('fileContents of listExpense', fileContents);
         console.log('expenses in listExpense', expenses);
-        document.getElementById('expenses').innerHTML = fileContents ? expenses.category + ' ' + expenses.expenseAmount : '';
+        document.getElementById('expenses').innerHTML = fileContents ? expenses[0].category + ' ' + expenses[0].expenseAmount : '';
     });
   }
 
@@ -61,10 +61,10 @@ document.addEventListener("DOMContentLoaded", event => {
 
         const category = document.getElementById('expense-category').value;
         const expenseAmount = document.getElementById('expense-amount').value;
-        const expense = [{ 
+        const expense = expenses.push({ 
           category,
           expenseAmount,
-        }];
+        });
         // console.log('prev expenses', prevExpenses);
         // console.log('category input', category);
         // console.log('amt input', expenseAmount);
