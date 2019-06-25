@@ -56,19 +56,19 @@ document.addEventListener("DOMContentLoaded", event => {
     .then((fileContents) => {
         // get the contents of the file /expenses.txt
         console.log('getExpenses', fileContents);
-        var todos = JSON.parse(fileContents || '[]');
+        var expenses = JSON.parse(fileContents || '[]');
         console.log('todaos in saveExpense', todos);
         // const prevExpenses = fileContents ? fileContents : '' ;
-        const category = document.getElementById('expense-category').value;
-        const expenseAmount = document.getElementById('expense-amount').value;
+        const categoryArray = expenses.category.push(document.getElementById('expense-category').value);
+        const expenseAmountArray = expenses.expenseAmount.push(document.getElementById('expense-amount').value);
         const expense = { 
-          category,
-          expenseAmount,
+          category: categoryArray,
+          expenseAmount: expenseAmountArray,
         };
         // console.log('prev expenses', prevExpenses);
-        console.log('category input', category);
-        console.log('amt input', expenseAmount);
-        console.log('expense input', expense);
+        // console.log('category input', category);
+        // console.log('amt input', expenseAmount);
+        // console.log('expense input', expense);
         userSession.putFile("/expenses.json", JSON.stringify(expense) , options)
         .then(() => {
             listExpense(userSession);
