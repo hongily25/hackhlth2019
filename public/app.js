@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", event => {
 
   function showProfile (profile) {
     let person = new blockstack.Person(profile);
-    console.log('person', person);
 
     document.getElementById('section-1').style.display = 'none';
     document.getElementById('section-2').style.display = 'block';
@@ -101,12 +100,13 @@ document.addEventListener("DOMContentLoaded", event => {
     .then((fileContents) => {
       let expenses = JSON.parse(fileContents || '[]');
       expenses = expenses.pop();
-      userSession.putFile("/expense5.json", JSON.stringify(expenses), {
-        decrypt: false
-      })
-        .then(() => {
-            listExpense(userSession);
-        })
+      expenses.length === 0 ? document.getElementById('expenses').style.display = 'none' : document.getElementById('expenses').style.display = 'flex';
+      let rows = '';
+      expenses.forEach(item => {
+        rows += '<tr><td>' + item.item + '</td><td>' + item.expenseAmount + '</td><td>' + item.category + '</td></tr>';
+      });
+      document.getElementById('expense-body').innerHTML = rows;
+
     })
   }
 
