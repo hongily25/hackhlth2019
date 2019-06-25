@@ -141,6 +141,7 @@ body {
   margin-bottom: .5rem;
 }
 
+.expense-table #expense-item,
 .expense-table #expense-category,
 .expense-table #expense-amount {
   margin-right: .5rem;
