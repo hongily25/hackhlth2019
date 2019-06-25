@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", event => {
         var expenses =  JSON.parse(fileContents || '[]');
         console.log('fileContents of listExpense', fileContents);
         console.log('expenses in listExpense', expenses);
-        document.getElementById('expenses').innerHTML = fileContents.length ? expenses[0].category + ' ' + expenses[0].expenseAmount : '';
+        // document.getElementById('expenses').innerHTML = fileContents.length ? expenses[0].category + ' ' + expenses[0].expenseAmount : '';
     });
   }
 
