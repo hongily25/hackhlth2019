@@ -42,9 +42,11 @@ document.addEventListener("DOMContentLoaded", event => {
         var expenses =  JSON.parse(fileContents || '[]');
         console.log('fileContents of listExpense', fileContents);
         console.log('expenses in listExpense', expenses);
+        let rows;
         expenses.forEach(item => {
-          document.getElementById('expenses').innerHTML = item.category + ' ' + item.expenseAmount + '<br>';
-        })
+          rows += item.category + ' ' + item.expenseAmount + '<br>';
+        });
+        document.getElementById('expenses').innerHTML = rows;
         // document.getElementById('expenses').innerHTML = fileContents.length ? expenses[0].category + ' ' + expenses[0].expenseAmount : '';
     });
   }
