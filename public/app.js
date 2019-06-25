@@ -97,13 +97,13 @@ document.addEventListener("DOMContentLoaded", event => {
     userSession.getFile("/expense5.json", { decrypt: false })
     .then((fileContents) => {
       var expenses = JSON.parse(fileContents || '[]');
-      expenses.pop();
-      console.log('after deleting last item', expenses);
+      
       if (expenses.length === 1) { 
         document.getElementById('expenses').style.display = 'none';
         document.getElementById('expense-body').innerHTML = '';
-        deleteList(userSession);
       } else {
+        expenses.pop(); 
+        console.log('after deleting last item', expenses);
         let rows = '';
         expenses.forEach(item => {
           rows += '<tr><td>' + item.item + '</td><td>' + item.expenseAmount + '</td><td>' + item.category + '</td></tr>';
