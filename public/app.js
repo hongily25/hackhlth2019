@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", event => {
         // console.log('category input', category);
         // console.log('amt input', expenseAmount);
         // console.log('expense input', expense);
-        userSession.putFile("/expense2.json", JSON.stringify(expense) , options)
+        userSession.putFile("/expense2.json", expense, options)
         .then(() => {
             listExpense(userSession);
             // /expenses.txt exists now, and has the contents "hello world!".
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", event => {
     const profile = userSession.loadUserData().profile;
     console.log('profile test3: ', profile);
     showProfile(profile);
-    // deleteList(userSession);
+    deleteList(userSession);
     listExpense(userSession);
   } else if (userSession.isSignInPending()) {
     userSession.handlePendingSignIn().then(userData => {
