@@ -63,8 +63,8 @@ document.addEventListener("DOMContentLoaded", event => {
         const expense = {
             expenses: expenses.push(
               { 
-                category,
-                expenseAmount,
+                category: category,
+                expenseAmount: expenseAmount,
               })
         };
         console.log('expense to be saved', expense);
