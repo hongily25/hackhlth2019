@@ -55,12 +55,12 @@ document.addEventListener("DOMContentLoaded", event => {
     })
     .then((fileContents) => {
         // get the contents of the file /expenses.txt
-        var expenses = [];
+        var expenses = JSON.parse(fileContents || '[]');
         console.log('old expenses in saveExpense', expenses);
 
         const category = document.getElementById('expense-category').value;
         const expenseAmount = parseInt(document.getElementById('expense-amount').value);
-        const expense = [{ 
+        const expense = [...expenses, { 
                 category: category,
                 expenseAmount: expenseAmount,
               }];
