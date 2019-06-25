@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", event => {
     saveExpense(userSession);
   })
 
-  document.getElementById('save-expense').addEventListener('click', event => {
+  document.getElementById('delete-btn').addEventListener('click', event => {
     event.preventDefault()
     deleteList(userSession);
   })
@@ -37,14 +37,12 @@ document.addEventListener("DOMContentLoaded", event => {
   function listExpense (userSession) {
     document.getElementById('crypto').style.display = 'block';
     document.getElementById('deleteExpenses').style.display = 'block';
-    // console.log('userSession', userSession);
     let options = {
       decrypt: false
     }
 
     userSession.getFile("/expense5.json", options)
     .then((fileContents) => {
-        // get the contents of the file /expenses.txt
         var expenses =  JSON.parse(fileContents || '[]');
         console.log('fileContents of listExpense', fileContents);
         console.log('expenses in listExpense', expenses);
@@ -53,8 +51,7 @@ document.addEventListener("DOMContentLoaded", event => {
           rows += item.category + ' ' + item.expenseAmount + '<br>';
         });
         document.getElementById('expenses').innerHTML = rows;
-        // document.getElementById('expenses').innerHTML = fileContents.length ? expenses[0].category + ' ' + expenses[0].expenseAmount : '';
-    });
+});
   }
 
   function saveExpense(userSession) {
@@ -76,14 +73,9 @@ document.addEventListener("DOMContentLoaded", event => {
                 expenseAmount: expenseAmount,
               }];
         console.log('expense to be saved', expense);
-        // console.log('prev expenses', prevExpenses);
-        // console.log('category input', category);
-        // console.log('amt input', expenseAmount);
-        // console.log('expense input', expense);
         userSession.putFile("/expense5.json", JSON.stringify(expense), options)
         .then(() => {
             listExpense(userSession);
-            // /expenses.txt exists now, and has the contents "hello world!".
         })
     });
 
@@ -92,14 +84,12 @@ document.addEventListener("DOMContentLoaded", event => {
   function deleteList(userSession) {
     userSession.deleteFile("/expense5.json")
     .then(() => {
-       // /hello.txt is now removed.
        listExpense(userSession);
     })
   }
 
   if (userSession.isUserSignedIn()) {
     const profile = userSession.loadUserData().profile;
-    // console.log('profile test3: ', profile);
     showProfile(profile);
     listExpense(userSession);
   } else if (userSession.isSignInPending()) {
