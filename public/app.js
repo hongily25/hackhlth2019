@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", event => {
       decrypt: false
     }
 
-    userSession.getFile("/expenses.json", options)
+    userSession.getFile("/expenseList.json", options)
     .then((fileContents) => {
         // get the contents of the file /expenses.txt
         var todos = JSON.parse(fileContents || '[]');
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", event => {
     let options = {
       encrypt: false
     }
-    userSession.getFile("/expenses.json", {
+    userSession.getFile("/expenseList.json", {
       decrypt: false
     })
     .then((fileContents) => {
@@ -59,6 +59,9 @@ document.addEventListener("DOMContentLoaded", event => {
         var expenses = JSON.parse(fileContents || '[]');
         console.log('expenses in saveExpense', expenses);
         // const prevExpenses = fileContents ? fileContents : '' ;
+        expenses.category = expenses.category ? expenses.category : [];
+        expenses.expenseAmount = expenses.expenseAmount ? expenses.expenseAmount : [];
+
         const categoryArray = expenses.category.push(document.getElementById('expense-category').value);
         const expenseAmountArray = expenses.expenseAmount.push(document.getElementById('expense-amount').value);
         const expense = { 
@@ -69,7 +72,7 @@ document.addEventListener("DOMContentLoaded", event => {
         // console.log('category input', category);
         // console.log('amt input', expenseAmount);
         // console.log('expense input', expense);
-        userSession.putFile("/expenses.json", JSON.stringify(expense) , options)
+        userSession.putFile("/expenseList.json", JSON.stringify(expense) , options)
         .then(() => {
             listExpense(userSession);
             // /expenses.txt exists now, and has the contents "hello world!".
