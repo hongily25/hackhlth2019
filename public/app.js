@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", event => {
       decrypt: false
     }
 
-    userSession.getFile("/expense2.json", options)
+    userSession.getFile("/expense3.json", options)
     .then((fileContents) => {
         // get the contents of the file /expenses.txt
         var expeneses = JSON.parse(fileContents || '[]');
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", event => {
     let options = {
       encrypt: false
     }
-    userSession.getFile("/expense2.json", {
+    userSession.getFile("/expense3.json", {
       decrypt: false
     })
     .then((fileContents) => {
@@ -64,14 +64,14 @@ document.addEventListener("DOMContentLoaded", event => {
         const categoryArray = expenses.category.push(document.getElementById('expense-category').value);
         const expenseAmountArray = expenses.expenseAmount.push(document.getElementById('expense-amount').value);
         const expense = { 
-          category: categoryArray,
-          expenseAmount: expenseAmountArray,
+          category: JSON.stringify(categoryArray),
+          expenseAmount: JSON.stringify(expenseAmountArray),
         };
         // console.log('prev expenses', prevExpenses);
         // console.log('category input', category);
         // console.log('amt input', expenseAmount);
         // console.log('expense input', expense);
-        userSession.putFile("/expense2.json", expense, options)
+        userSession.putFile("/expense3.json", expense, options)
         .then(() => {
             listExpense(userSession);
             // /expenses.txt exists now, and has the contents "hello world!".
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", event => {
   }
 
   function deleteList(userSession) {
-    userSession.deleteFile("/expense2.json")
+    userSession.deleteFile("/expense3.json")
     .then(() => {
        // /hello.txt is now removed.
     })
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", event => {
     const profile = userSession.loadUserData().profile;
     console.log('profile test3: ', profile);
     showProfile(profile);
-    deleteList(userSession);
+    // deleteList(userSession);
     listExpense(userSession);
   } else if (userSession.isSignInPending()) {
     userSession.handlePendingSignIn().then(userData => {
