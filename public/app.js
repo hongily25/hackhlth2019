@@ -94,18 +94,17 @@ document.addEventListener("DOMContentLoaded", event => {
   }
 
   function deleteLastItem(userSession) {
-    userSession.getFile("/expense5.json", {
-      decrypt: false
-    })
+    userSession.getFile("/expense5.json", { decrypt: false })
     .then((fileContents) => {
-      let expenses = JSON.parse(fileContents || '[]');
+      var expenses = JSON.parse(fileContents || '[]');
       expenses = expenses.pop();
-      expenses.length === 0 ? document.getElementById('expenses').style.display = 'none' : document.getElementById('expenses').style.display = 'flex';
+      console.log('after deleting last item', expenses);
+      /* expenses.length === 0 ? document.getElementById('expenses').style.display = 'none' : document.getElementById('expenses').style.display = 'flex';
       let rows = '';
       expenses.forEach(item => {
         rows += '<tr><td>' + item.item + '</td><td>' + item.expenseAmount + '</td><td>' + item.category + '</td></tr>';
       });
-      document.getElementById('expense-body').innerHTML = rows;
+      document.getElementById('expense-body').innerHTML = rows;*/
 
     })
   }
