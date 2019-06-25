@@ -36,33 +36,40 @@ document.addEventListener("DOMContentLoaded", event => {
       decrypt: false
     }
 
-    userSession.getFile("/expenses.txt", options)
+    userSession.getFile("/expenses.json", options)
     .then((fileContents) => {
         // get the contents of the file /expenses.txt
-        console.log('fileContents', fileContents);
-        document.getElementById('expenses').innerHTML = fileContents ? fileContents : '';
+        var todos = JSON.parse(fileContents || '[]');
+        console.log('fileContents listExpense', fileContents);
+        console.log('todos listExpense', todos);
+        // document.getElementById('expenses').innerHTML = fileContents ? fileContents : '';
     });
   }
 
-  async function saveExpense(userSession) {
+  function saveExpense(userSession) {
     let options = {
       encrypt: false
     }
-    userSession.getFile("/expenses.txt", {
+    userSession.getFile("/expenses.json", {
       decrypt: false
     })
     .then((fileContents) => {
         // get the contents of the file /expenses.txt
-        console.log('getExpenes', fileContents);
-        const prevExpenses = fileContents ? fileContents : '' ;
+        console.log('getExpenses', fileContents);
+        var todos = JSON.parse(fileContents || '[]');
+        console.log('todaos in saveExpense', todos);
+        // const prevExpenses = fileContents ? fileContents : '' ;
         const category = document.getElementById('expense-category').value;
         const expenseAmount = document.getElementById('expense-amount').value;
-        const expense = prevExpenses + category + ' ' + expenseAmount + + '<br>';
-        console.log('prev expenses', prevExpenses);
+        const expense = { 
+          category,
+          expenseAmount,
+        };
+        // console.log('prev expenses', prevExpenses);
         console.log('category input', category);
         console.log('amt input', expenseAmount);
         console.log('expense input', expense);
-        userSession.putFile("/expenses.txt", expense , options)
+        userSession.putFile("/expenses.json", JSON.stringify(expense) , options)
         .then(() => {
             listExpense(userSession);
             // /expenses.txt exists now, and has the contents "hello world!".
