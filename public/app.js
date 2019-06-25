@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", event => {
         // get the contents of the file /expenses.txt
         console.log('getExpenses', fileContents);
         var expenses = JSON.parse(fileContents || '[]');
-        console.log('todaos in saveExpense', todos);
+        console.log('expenses in saveExpense', expenses);
         // const prevExpenses = fileContents ? fileContents : '' ;
         const categoryArray = expenses.category.push(document.getElementById('expense-category').value);
         const expenseAmountArray = expenses.expenseAmount.push(document.getElementById('expense-amount').value);
