@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", event => {
     })
   }
 
-  function deleteList(userSession) {
+  function deleteLastItem(userSession) {
     userSession.getFile("/expense5.json", {
       decrypt: false
     })
