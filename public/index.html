@@ -33,13 +33,27 @@
          <div class="panel-landing hide" id="crypto">
           <h3 id="expenses-header">Fill out the following fields to add an expense.</h3>
           <div id="expenses">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Item</th>
+                  <th>Amount</th>
+                  <th>Category</th>
+                </tr>
+              </thead>
+            </table>
           </div>
           <table class="expense-table">
-            <tr>
-              <td><h4>Item</h4></td>
-              <td><h4>Category</h4></td>
-              <td><h4>Amount</h4></td>
-            </tr>
+            <thead>
+              <tr>
+                <td><h4>Item</h4></td>
+                <td><h4>Amount</h4></td>
+                <td><h4>Category</h4></td>
+              </tr>
+            </thead>
+            <tbody id="expense-body">
+            </tbody>
+
             <tr>
               <td>
                   <div class="input-group mb-3">
@@ -48,15 +62,15 @@
               </td>
               <td>
                   <div class="input-group mb-3">
-                      <input type="text" class="form-control" aria-label="Category" id="expense-category">
-                  </div>
-              </td>
-              <td>
-                  <div class="input-group mb-3">
                       <div class="input-group-prepend">
                         <span class="input-group-text">$</span>
                       </div>
                       <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="expense-amount">
+                  </div>
+              </td>
+              <td>
+                  <div class="input-group mb-3">
+                      <input type="text" class="form-control" aria-label="Category" id="expense-category">
                   </div>
               </td>
             </tr>

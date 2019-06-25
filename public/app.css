@@ -125,6 +125,8 @@ body {
 
 #expenses{
   margin: 1.5rem;
+  display: flex;
+  justify-content: center;
 }
 
 #crypto-container {

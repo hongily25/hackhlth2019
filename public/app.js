@@ -46,9 +46,9 @@ document.addEventListener("DOMContentLoaded", event => {
         console.log('expenses in listExpense', expenses);
         let rows = '';
         expenses.forEach(item => {
-          rows += item.item + ' ' + item.category + ' ' + item.expenseAmount + '<br>';
+          rows += '<tr><td>' + item.item + '</td><td>' + item.expenseAmount + '</td><td>' + item.category + '</td></tr>';
         });
-        document.getElementById('expenses').innerHTML = rows;
+        document.getElementById('expense-body').innerHTML = rows;
 });
   }
 
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", event => {
         const expense = [...expenses, { 
                 item: item,
                 category: category,
-                expenseAmount: expenseAmount,
+                expenseAmount: '$' + expenseAmount,
               }];
         console.log('expense to be saved', expense);
         userSession.putFile("/expense5.json", JSON.stringify(expense), options)
