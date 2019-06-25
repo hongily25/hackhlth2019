@@ -36,11 +36,12 @@ document.addEventListener("DOMContentLoaded", event => {
       decrypt: false
     }
 
-    userSession.getFile("/expenseList.json", options)
+    userSession.getFile("/expense2.json", options)
     .then((fileContents) => {
         // get the contents of the file /expenses.txt
-        var todos = JSON.parse(fileContents || '[]');
-        console.log('todos listExpense', todos);
+        var expeneses = JSON.parse(fileContents || '[]');
+        console.log('fileContents of listExpense', fileContents);
+        console.log('expenses in listExpense', expeneses);
         // document.getElementById('expenses').innerHTML = fileContents ? fileContents : '';
     });
   }
@@ -49,7 +50,7 @@ document.addEventListener("DOMContentLoaded", event => {
     let options = {
       encrypt: false
     }
-    userSession.getFile("/expenseList.json", {
+    userSession.getFile("/expense2.json", {
       decrypt: false
     })
     .then((fileContents) => {
@@ -70,7 +71,7 @@ document.addEventListener("DOMContentLoaded", event => {
         // console.log('category input', category);
         // console.log('amt input', expenseAmount);
         // console.log('expense input', expense);
-        userSession.putFile("/expenseList.json", JSON.stringify(expense) , options)
+        userSession.putFile("/expense2.json", JSON.stringify(expense) , options)
         .then(() => {
             listExpense(userSession);
             // /expenses.txt exists now, and has the contents "hello world!".
@@ -80,7 +81,7 @@ document.addEventListener("DOMContentLoaded", event => {
   }
 
   function deleteList(userSession) {
-    userSession.deleteFile("/expenseList.json")
+    userSession.deleteFile("/expense2.json")
     .then(() => {
        // /hello.txt is now removed.
     })
@@ -90,7 +91,7 @@ document.addEventListener("DOMContentLoaded", event => {
     const profile = userSession.loadUserData().profile;
     console.log('profile test3: ', profile);
     showProfile(profile);
-    deleteList(userSession);
+    // deleteList(userSession);
     listExpense(userSession);
   } else if (userSession.isSignInPending()) {
     userSession.handlePendingSignIn().then(userData => {
