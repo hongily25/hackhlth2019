@@ -129,6 +129,7 @@ body {
 #crypto-container {
   display: flex;
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .expense-table {
@@ -146,4 +147,5 @@ body {
 
 .expense-table td[rowspan="2"] {
   vertical-align: bottom;
+  padding-left: 1rem;
 }

@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", event => {
 
   function listExpense (userSession) {
     document.getElementById('crypto').style.display = 'block';
+    document.getElementById('deleteExpenses').style.display = 'block';
     // console.log('userSession', userSession);
     let options = {
       decrypt: false
@@ -94,7 +95,6 @@ document.addEventListener("DOMContentLoaded", event => {
     const profile = userSession.loadUserData().profile;
     // console.log('profile test3: ', profile);
     showProfile(profile);
-    deleteList(userSession);
     listExpense(userSession);
   } else if (userSession.isSignInPending()) {
     userSession.handlePendingSignIn().then(userData => {
