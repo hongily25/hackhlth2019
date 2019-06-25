@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", event => {
 
   function showProfile (profile) {
     let person = new blockstack.Person(profile);
-    console.log('person', person);
+    // console.log('person', person);
     document.getElementById('heading-name').innerHTML = person.name() ? person.name() : "there";
     if(person.avatarUrl()) {
       document.getElementById('avatar-image').setAttribute('src', person.avatarUrl())
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", event => {
 
   function listExpense (userSession) {
     document.getElementById('crypto').style.display = 'block';
-    console.log('userSession', userSession);
+    // console.log('userSession', userSession);
     let options = {
       decrypt: false
     }
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", event => {
         var expenses =  JSON.parse(fileContents || '[]');
         console.log('fileContents of listExpense', fileContents);
         console.log('expenses in listExpense', expenses);
-        document.getElementById('expenses').innerHTML = fileContents ? expenses[0].category + ' ' + expenses[0].expenseAmount : '';
+        document.getElementById('expenses').innerHTML = fileContents.length ? expenses[0].category + ' ' + expenses[0].expenseAmount : '';
     });
   }
 
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", event => {
   }
 
   function deleteList(userSession) {
-    userSession.deleteFile("/expense4.json")
+    userSession.deleteFile("/expense5.json")
     .then(() => {
        // /hello.txt is now removed.
     })
