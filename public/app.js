@@ -101,14 +101,17 @@ document.addEventListener("DOMContentLoaded", event => {
         expenses.pop(); 
         console.log('after deleting last item', expenses);
         
-        userSession.putFile("/expense5.json", JSON.stringify(expenses), { decrypt: false })
+        userSession.putFile("/expense5.json", [], { decrypt: false })
         .then(() => {
           listExpense(userSession);
         })
       } else if (expenses.length === 1) {
         document.getElementById('expenses').style.display = 'none';
         document.getElementById('expense-body').innerHTML = '';
-        deleteFile(userSession);
+        userSession.putFile("/expense5.json", JSON.stringify(expenses), { decrypt: false })
+        .then(() => {
+          listExpense(userSession);
+        })
       }; 
     })
   }
