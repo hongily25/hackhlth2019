@@ -172,6 +172,5 @@ body {
 }
 
 #deleteExpenses {
-  display: flex;
   justify-content: center;
 }
