@@ -97,18 +97,18 @@ document.addEventListener("DOMContentLoaded", event => {
     userSession.getFile("/expense5.json", { decrypt: false })
     .then((fileContents) => {
       var expenses = JSON.parse(fileContents || '[]');
-      if (expenses.length === 0) { 
-        document.getElementById('expenses').style.display = 'none';
-        document.getElementById('expense-body').innerHTML = '';
-      } else {
+      if (expenses.length > 1) { 
         expenses.pop(); 
         console.log('after deleting last item', expenses);
-        let rows = '';
-        expenses.forEach(item => {
-          rows += '<tr><td>' + item.item + '</td><td>' + item.expenseAmount + '</td><td>' + item.category + '</td></tr>';
-        });
-        document.getElementById('expense-body').innerHTML = rows;
-        userSession.putFile("/expense5.json", JSON.stringify(expenses), { decrypt: false });  
+        document.getElementById('expense-body').innerHTML = rows; 
+        userSession.putFile("/expense5.json", JSON.stringify(expenses), { decrypt: false })
+        .then(() => {
+          listExpense(userSession);
+        })
+      } else {
+        document.getElementById('expenses').style.display = 'none';
+        document.getElementById('expense-body').innerHTML = '';
+        deleteFile(userSession);
       }; 
     })
   }
