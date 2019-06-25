@@ -56,11 +56,11 @@ document.addEventListener("DOMContentLoaded", event => {
     .then((fileContents) => {
         // get the contents of the file /expenses.txt
         var expenses = JSON.parse(fileContents || '[]');
-        console.log('expenses in saveExpense', expenses);
+        console.log('old expenses in saveExpense', expenses);
         // const prevExpenses = fileContents ? fileContents : '' ;
 
-        const category = document.getElementById('expense-category').value;
-        const expenseAmount = document.getElementById('expense-amount').value;
+        const category = expenses.category + document.getElementById('expense-category').value;
+        const expenseAmount = expenses.expenseAmount + document.getElementById('expense-amount').value;
         const expense = { 
           category,
           expenseAmount,

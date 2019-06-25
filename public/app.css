@@ -136,7 +136,7 @@ body {
 }
 
 .expense-table h4 {
-  margin-bottom: .5rem;
+  margin-bottom: 0;
 }
 
 .expense-table #expense-category,
