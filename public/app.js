@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", event => {
       if (expenses.length > 1) { 
         expenses.pop(); 
         console.log('after deleting last item', expenses);
-        document.getElementById('expense-body').innerHTML = rows; 
+        
         userSession.putFile("/expense5.json", JSON.stringify(expenses), { decrypt: false })
         .then(() => {
           listExpense(userSession);
