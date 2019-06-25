@@ -95,10 +95,11 @@ body {
 
 .site-wrapper-inner {
   display: table-cell;
-  vertical-align: middle;
+  vertical-align: top;
   margin-right: auto;
   margin-left: auto;
   width: 100%;
+  padding-top: 3rem;
 }
 
 .panel-authed {
@@ -129,7 +130,7 @@ body {
 #crypto-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .expense-table {
@@ -146,6 +147,5 @@ body {
 } 
 
 .expense-table td[rowspan="2"] {
-  vertical-align: bottom;
   padding-left: 1rem;
 }

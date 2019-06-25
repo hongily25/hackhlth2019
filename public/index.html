@@ -12,6 +12,13 @@
   <script src="./public/app.js"></script>
 </head>
 <body>
+  <div class="panel-welcome hide" id="section-2">
+      <p class="lead">
+        <a href="#" class="btn btn-primary btn-lg" id="signout-button">
+          Logout
+        </a>
+      </p>
+    </div>
   <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="panel-landing" id="section-1">
@@ -19,17 +26,6 @@
           <p class="lead">
             <a href="#" class="btn btn-primary btn-lg" id="signin-button">
               Sign In with Blockstack
-            </a>
-          </p>
-        </div>
-        <div class="panel-welcome hide" id="section-2">
-          <div class="avatar-section">
-            <img src="https://s3.amazonaws.com/onename/avatar-placeholder.png" class="img-rounded avatar" id="avatar-image">
-          </div>
-          <h1>Hello <span id="heading-name">Anonymous</span>!</h1>
-          <p class="lead">
-            <a href="#" class="btn btn-primary btn-lg" id="signout-button">
-              Logout
             </a>
           </p>
         </div>
@@ -45,8 +41,19 @@
               <td rowspan="2"><div class="btn btn-primary" id="save-expense">Add</div></td>
             </tr>
             <tr>
-              <td><input id="expense-category"> </td>
-              <td><input id="expense-amount"></td>
+              <td>
+                  <div class="input-group mb-3">
+                      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="expense-category">
+                  </div>
+              </td>
+              <td>
+                  <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                      </div>
+                      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="expense-amount">
+                  </div>
+              </td>
             </tr>
           </table>
         </div>         
