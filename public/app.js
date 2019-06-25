@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", event => {
         var expenses =  JSON.parse(fileContents || '[]');
         console.log('fileContents of listExpense', fileContents);
         console.log('expenses in listExpense', expenses);
+        expenses.length === 0 ? document.getElementById('expenses').style.display = 'none' : document.getElementById('expenses').style.display = 'flex';
         let rows = '';
         expenses.forEach(item => {
           rows += '<tr><td>' + item.item + '</td><td>' + item.expenseAmount + '</td><td>' + item.category + '</td></tr>';

@@ -123,6 +123,10 @@ body {
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
 }
 
+#expenses-header {
+  font-size: 1rem;
+}
+
 #expenses{
   margin: 1.5rem;
   display: flex;
@@ -141,6 +145,7 @@ body {
 
 .expense-table h4 {
   margin-bottom: .5rem;
+  font-size: 1.2rem;
 }
 
 .expense-table #expense-item,
