@@ -99,6 +99,11 @@ document.addEventListener("DOMContentLoaded", event => {
       var expenses = JSON.parse(fileContents || '[]');
       expenses.pop();
       console.log('after deleting last item', expenses);
+      if (expenses.length === 1) { 
+        document.getElementById('expenses').style.display = 'none';
+        document.getElementById('expense-body').innerHTML = '';
+        return;
+      }; 
       expenses.length === 0 ? document.getElementById('expenses').style.display = 'none' : document.getElementById('expenses').style.display = 'flex';
       let rows = '';
       expenses.forEach(item => {
