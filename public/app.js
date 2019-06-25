@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", event => {
 
         const item = document.getElementById('expense-item').value;
         const category = document.getElementById('expense-category').value;
-        const expenseAmount = parseFloat(document.getElementById('expense-amount').value);
+        const expenseAmount = document.getElementById('expense-amount').value;
         const expense = [...expenses, { 
                 item: item,
                 category: category,
