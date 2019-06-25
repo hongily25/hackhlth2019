@@ -73,6 +73,9 @@ document.addEventListener("DOMContentLoaded", event => {
         // get the contents of the file /expenses.txt
         var expenses = JSON.parse(fileContents || '[]');
         console.log('old expenses in saveExpense', expenses);
+        if (expenses.length > 0) {
+          expenses = expenses;
+        } else { expenses = [] }
 
         const item = document.getElementById('expense-item').value;
         const category = document.getElementById('expense-category').value;
