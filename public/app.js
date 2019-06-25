@@ -60,13 +60,10 @@ document.addEventListener("DOMContentLoaded", event => {
 
         const category = document.getElementById('expense-category').value;
         const expenseAmount = parseInt(document.getElementById('expense-amount').value);
-        const expense = {
-            expenses: expenses.push(
-              { 
+        const expense = { 
                 category: category,
                 expenseAmount: expenseAmount,
-              })
-        };
+              };
         console.log('expense to be saved', expense);
         // console.log('prev expenses', prevExpenses);
         // console.log('category input', category);
