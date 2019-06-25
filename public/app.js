@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", event => {
   }
 
   function deleteList(userSession) {
-    userSession.deleteFile("/expenseList.txt")
+    userSession.deleteFile("/expenseList.json")
     .then(() => {
        // /hello.txt is now removed.
     })
