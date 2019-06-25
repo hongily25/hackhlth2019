@@ -95,7 +95,7 @@ body {
 
 .site-wrapper-inner {
   display: table-cell;
-  vertical-align: top;
+  vertical-align: middle;
   margin-right: auto;
   margin-left: auto;
   width: 100%;
@@ -148,4 +148,8 @@ body {
 
 .expense-table td[rowspan="2"] {
   padding-left: 1rem;
+}
+
+.lead {
+  float: right;
 }

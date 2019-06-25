@@ -27,8 +27,9 @@ document.addEventListener("DOMContentLoaded", event => {
     let person = new blockstack.Person(profile);
     console.log('person', person);
 
-    document.getElementById('section-1').style.display = 'none'
-    document.getElementById('section-2').style.display = 'block'
+    document.getElementById('section-1').style.display = 'none';
+    document.getElementById('section-2').style.display = 'block';
+    document.getElementById('site-wrapper-inner').style.verticalAlign = 'top';
   }
 
   function listExpense (userSession) {
