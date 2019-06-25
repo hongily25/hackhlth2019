@@ -101,7 +101,12 @@ document.addEventListener("DOMContentLoaded", event => {
     .then((fileContents) => {
       let expenses = JSON.parse(fileContents || '[]');
       expenses = expenses.pop();
-      listExpense(userSession)
+      userSession.putFile("/expense5.json", JSON.stringify(expenses), {
+        decrypt: false
+      })
+        .then(() => {
+            listExpense(userSession);
+        })
     })
   }
 
