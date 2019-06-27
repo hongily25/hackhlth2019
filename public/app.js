@@ -23,11 +23,6 @@ document.addEventListener("DOMContentLoaded", event => {
     deleteList(userSession);
   })
 
-  /* document.getElementById('delete-last').addEventListener('click', event => {
-    event.preventDefault()
-    deleteLastItem(userSession);
-  })*/
-
   function showProfile (profile) {
     let person = new blockstack.Person(profile);
 
