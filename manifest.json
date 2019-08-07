@@ -1,7 +1,7 @@
 {
-  "name": "Expense.IO",
-  "start_url": "https://emilytlam.com",
-  "description": "A simple demo of Blockstack Auth",
+  "name": "Fitness Stack",
+  "start_url": "https://fitnesspace.space",
+  "description": "A secure fitness tracking application",
   "icons": [{
     "src": "https://helloblockstack.com/icon-192x192.png",
     "sizes": "192x192",
