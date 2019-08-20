@@ -58,8 +58,15 @@ body {
 }
 
 .btn-primary {
+  color: #fff;
+  text-decoration: none;
   background-color: #270F34;
   border: 1px solid #270F34;
+}
+
+.landing-logo {
+  width: 125px;
+  margin-bottom: 20px;
 }
 
 .btn-primary:hover,
@@ -67,6 +74,7 @@ body {
 .btn-primary:active {
   color: #fff;
   border: 1px solid #2C96FF;
+  text-decoration: none;
   background-color: #2C96FF;
 }
 
@@ -92,6 +100,15 @@ body {
   min-height: 100%;
 }
 
+.date-picker {
+  padding: 5px;
+}
+
+.dash-add-prompt {
+  font-weight: bold;
+  font-size: 16px;
+}
+
 .site-wrapper-inner {
   display: table-cell;
   vertical-align: middle;
@@ -103,6 +120,38 @@ body {
 
 .panel-authed {
   padding: 0 0 0 0;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.input-units-group {
+  margin-top: 15px;
+  margin-left: 6px;
+}
+
+.dash-logo {
+  width: 50px;
+  margin-bottom: 5px;
+}
+
+.dash-header { 
+  margin-bottom: 20px;
+}
+
+.dash-chart {
+  margin-bottom: 20px;
+}
+
+.dash-header-text {
+  font-size: 24px;
+  margin-left: 5px;
+  font-weight: 600;
+}
+
+.landing-slogan-text {
+  font-family: 'Source Code Pro', monospace;
 }
 
 /* Home button */

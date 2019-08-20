@@ -1,29 +1,42 @@
 {
-  "name": "hello-blockstack",
-  "version": "0.0.0",
-  "description": "A simple Blockstack app",
-  "main": "index.js",
-  "scripts": {
-    "browserify": "browserify requires.js -o public/bundle.js",
-    "start": "npm run browserify && node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/blockstack/hello-blockstack.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/blockstack/hello-blockstack/issues"
-  },
-  "homepage": "https://github.com/blockstack/hello-blockstack#readme",
-  "devDependencies": {
-    "browserify": "^16.2.3",
-    "express": "^4.16.4",
-    "open": "^6.1.0"
-  },
+  "name": "fitness",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "blockstack": "^19.1.0",
-    "coinbase": "^2.0.8"
+    "blockstack": "^19.2.5",
+    "bootstrap": "^4.3.1",
+    "chart.js": "^2.8.0",
+    "react": "^16.9.0",
+    "react-bootstrap": "^1.0.0-beta.11",
+    "react-chartkick": "^0.3.2",
+    "react-datepicker": "^2.8.0",
+    "react-dom": "^16.9.0",
+    "react-joyride": "^2.1.1",
+    "react-scripts": "3.1.0"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "react-app-rewire-blockstack": "^1.0.7",
+    "react-app-rewired": "^2.1.3"
   }
 }
