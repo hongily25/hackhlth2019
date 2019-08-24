@@ -2,22 +2,24 @@ const {
   rewireBlockstackBuild,
   rewireBlockstackDevServer
 } = require('react-app-rewire-blockstack')
+const {
+  override,
+  disableEsLint,
+  overrideDevServer,
+  watchAll,
+  getBabelLoader,
+} = require("customize-cra");
 
 module.exports = {
 
-  webpack: (config, env) => {
-    if(env === 'production') {
-      config = rewireBlockstackBuild(config)
-    }
-    return config
-  },
+  webpack: override(
+    // usual webpack plugin
+    disableEsLint()
+  ),
 
-  devServer: (configFunction) => {
-    return (proxy, allowedHost) => {
-      let config = configFunction(proxy, allowedHost)
-      config = rewireBlockstackDevServer(config)
-      return config
-    }
-  }
+  devServer: overrideDevServer(
+    // dev server plugin
+    watchAll()
+  )
 
 }
