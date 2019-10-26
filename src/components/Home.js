@@ -76,7 +76,6 @@ export default class Home extends Component {
               </p>
             </div>
             {!profile && <div>
-              <img src="https://i.giphy.com/media/26BRq9PYFLeJl3WLu/giphy.webp" />
               <p className='landing-slogan-text'>Track your A1c history and review your yearly trend.</p>
             </div>}
             <div>
