@@ -71,13 +71,13 @@ export default class Home extends Component {
                   id="signin-button"
                   onClick={this.signin}
                 >
-                  Sign In with Blockstack
+                  Sign In
                 </a>
               </p>
             </div>
             {!profile && <div>
               <img src="https://i.giphy.com/media/26BRq9PYFLeJl3WLu/giphy.webp" />
-              <p className='landing-slogan-text'>Share and record your weight loss progress, backed by <a href="https://blockstack.org" target="_blank">Blockstack</a> decentralized storage.</p>
+              <p className='landing-slogan-text'>Track your A1c history and review your yearly trend.</p>
             </div>}
             <div>
               {profile && <FitstackProfile profile={profile} userSession={userSession}/>}
