@@ -30,26 +30,26 @@ export default class FitstackProfile extends Component {
       {
         target: ".dash-header-text",
         content:
-          "Welcome to the Fitness Stack weight tracker! This app allows you to securely track and share your weight loss achievements with friends."
+          "Welcome to the First Step! This app allows you to securely track your A1c and assess your risk for foot ulcers compared to your local demographics."
       },
       {
         target: ".dash-entry",
-        content: "New weight logs can be added from the bottom input here."
+        content: "New logs can be added from the bottom input here."
       },
       {
         target: ".dash-add",
         content:
-          "Adding an entry appends it to your existing ledger, managed by Blockstack's decentralized and permissioned network."
+          "Adding an entry appends it to your existing log, managed by Blockstack's decentralized and permissioned network."
       },
       {
         target: ".dash-delete",
         content:
-          "Deleting the table is irreversible and remove all entries from your ledger. Only use this if you are certain you want to start over!"
+          "Deleting the table is irreversible and remove all entries. Only use this if you are certain you want to start over!"
       },
       {
         target: ".dash-chart",
         content:
-          "We'll automatically plot your data over time as you add weight entries."
+          "We'll automatically plot your data over time as you add entries."
       },
       {
         target: ".dash-logout",
@@ -251,10 +251,6 @@ export default class FitstackProfile extends Component {
         />
         <div id="crypto-container">
           <div className="panel-landing" id="crypto">
-            <div className="dash-header">
-              <img className="dash-logo" src={logo} />
-              <span className="dash-header-text">Weight Tracker</span>
-            </div>
             <div className="dash-chart">
               <LineChart
                 legend={false}
