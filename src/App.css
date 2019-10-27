@@ -227,6 +227,6 @@ body {
   justify-content: center;
 }
 
-#deleteWeights {
+#deleteWeights, #reportAdditional {
   margin-bottom: 1em;
 }
