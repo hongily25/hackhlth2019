@@ -23,7 +23,7 @@ export default class FitstackProfile extends Component {
     loading: true,
     run: false,
     inputDate: '',
-    inputUnits: 'reading',
+    inputUnits: 'Yes',
     inputWeight: '',
     stepIndex: 0, // a controlled tour
     steps: [
@@ -148,7 +148,7 @@ export default class FitstackProfile extends Component {
     this.setState({
       inputDate: '',
       inputWeight: '',
-      inputUnits: 'reading'
+      inputUnits: 'Yes'
     })
   }
 
@@ -223,9 +223,9 @@ export default class FitstackProfile extends Component {
         const d = log.date
         const u = log.units
         if (u != units) {
-          if (u === 'reading') {
+          if (u === 'Yes') {
             w *= 2.2
-          } else if (u === 'reading') {
+          } else if (u === 'No') {
             w /= 2.2 
           }
         }
@@ -293,7 +293,7 @@ export default class FitstackProfile extends Component {
                       return <tr key={i}>
                         <td>{row.weight}</td>
                         <td>{row.date}</td>
-                        <td>Yes</td>
+                        <td>{row.units}</td>
                       </tr>
                     })}
                   </tbody>
@@ -335,16 +335,14 @@ export default class FitstackProfile extends Component {
                 <tr>
                   <p>Did you check your feet?</p>
                     <div className="feetRadio">
-                      <form>
                         <label>
-                          <input name="foot" type="radio" value="yes" onClick={this.showAdditional} />
+                          <input name="foot" type="radio" value="Yes" onClick={this.showAdditional} />
                           <span className="foot">Yes</span>
                         </label>
                         <label className="noFoot">
-                          <input name="foot" type="radio" value="no" onClick={this.hideAdditional} />
+                          <input name="foot" type="radio" value="No" onClick={this.hideAdditional} />
                           <span className="foot">No</span>
                         </label>
-                      </form>
                     </div>
                 </tr>
               </tbody>
