@@ -349,6 +349,18 @@ export default class FitstackProfile extends Component {
           </div>
           &nbsp;
         </div>
+        <div>
+          <p>Would you like to report anything?</p>
+          <div className="btn btn-primary dash-add">
+            Draw
+          </div> &nbsp;
+          <div className="btn btn-primary dash-add">
+            Upload image
+          </div> &nbsp;
+          <div className="btn btn-primary dash-add">
+            No
+          </div> &nbsp;
+        </div>
 
       </div>
     )
