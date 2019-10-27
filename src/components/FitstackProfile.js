@@ -289,7 +289,7 @@ export default class FitstackProfile extends Component {
 
             <hr />
 
-            <p className="dash-add-prompt">-<br/>Add a new weight recording:</p>
+            <p className="dash-add-prompt">-<br/>Add a new A1c recording:</p>
             <table className="weight-table dash-entry">
               <tbody id="weight-body">
                 <tr>
@@ -300,7 +300,7 @@ export default class FitstackProfile extends Component {
                       onChange={this.handleChange} 
                       name='inputWeight' 
                       type="number" 
-                      placeholder="Enter weight" 
+                      placeholder="Enter A1c number (ex. 7)" 
                     />
                     </div>
                   </td>
@@ -315,7 +315,7 @@ export default class FitstackProfile extends Component {
                     </div>
                   </td>
                   <td>
-                    <div className="input-group input-units-group mb-3">
+                    <div className="input-group input-units-group mb-3" style="display:none">
                       <Form.Group controlId="exampleForm.ControlSelect1">
                         <Form.Control
                           as="select"
@@ -324,7 +324,7 @@ export default class FitstackProfile extends Component {
                           componentClass="select"
                           onChange={this.handleChange}>
                           <option>lb</option>
-                          <option>kg</option>
+                          <option>mg</option>
                         </Form.Control>
                       </Form.Group>
                     </div>
@@ -338,7 +338,7 @@ export default class FitstackProfile extends Component {
         </div>
         <div id="deleteWeights">
           <div className="btn btn-primary dash-add" id="save-weight" onClick={this.saveWeight}>
-            Add weight log
+            Add A1c number
           </div>
           &nbsp;
           <div className="btn btn-primary dash-delete" id="delete-button" onClick={this.deleteList}>
