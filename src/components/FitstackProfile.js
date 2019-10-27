@@ -304,6 +304,8 @@ export default class FitstackProfile extends Component {
                     />
                     </div>
                   </td>
+                </tr>
+                <tr>
                   <td>
                     <div className="input-group mb-3">
                       <DatePicker
