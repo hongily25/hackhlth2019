@@ -290,7 +290,7 @@ export default class FitstackProfile extends Component {
                 <table className="table dash-table">
                   <thead className="thead-dark">
                     <tr>
-                      <th>Glucose Level</th>
+                      <th>Fasting Glucose Level</th>
                       <th>Date</th>
                       <th>Foot Checked</th>
                     </tr>
