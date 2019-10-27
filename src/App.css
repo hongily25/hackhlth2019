@@ -226,3 +226,7 @@ body {
 #deleteExpenses {
   justify-content: center;
 }
+
+#deleteWeights {
+  margin-bottom: 1em;
+}
