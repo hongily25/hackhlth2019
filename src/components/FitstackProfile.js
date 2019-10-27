@@ -23,7 +23,7 @@ export default class FitstackProfile extends Component {
     loading: true,
     run: false,
     inputDate: '',
-    inputUnits: 'lb',
+    inputUnits: 'reading',
     inputWeight: '',
     stepIndex: 0, // a controlled tour
     steps: [
