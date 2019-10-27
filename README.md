@@ -1,7 +1,5 @@
-Fitness Stack
+First Step
 ---
-
-Track your fitness goals on decentralized and encrypted storage powered by Blockstack.
 
 ### Running locally
 <pre>
