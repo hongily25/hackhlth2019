@@ -30,7 +30,7 @@ export default class FitstackProfile extends Component {
       {
         target: ".dash-header-text",
         content:
-          "Welcome to the First Step! This app allows you to securely track your A1c and assess your risk for foot ulcers compared to your local demographics."
+          "Welcome to the First Step! This app allows you to securely track your glucose levels and assess your risk for foot ulcers compared to your local demographics."
       },
       {
         target: ".dash-entry",
@@ -88,7 +88,7 @@ export default class FitstackProfile extends Component {
       console.log("fileContents of listWeight", fileContents)
       console.log("weights in listWeight", weightLogs)
       // set the tutorial to run if no logs are present.
-      self.setState({ weightLogs, loading: false, run: weightLogs.length === 0 })
+      self.setState({ weightLogs, loading: false, run: true })
     })
   }
 
@@ -269,7 +269,7 @@ export default class FitstackProfile extends Component {
                 <table className="table dash-table">
                   <thead className="thead-dark">
                     <tr>
-                      <th>A1c Reading</th>
+                      <th>Glucose Reading</th>
                       <th>Date</th>
                     </tr>
                   </thead>
@@ -287,7 +287,7 @@ export default class FitstackProfile extends Component {
 
             <hr />
 
-            <p className="dash-add-prompt">-<br/>Add a new A1c recording:</p>
+            <p className="dash-add-prompt">-<br/>Add a new glucose reading:</p>
             <table className="weight-table dash-entry">
               <tbody id="weight-body">
                 <tr>
@@ -298,7 +298,7 @@ export default class FitstackProfile extends Component {
                       onChange={this.handleChange} 
                       name='inputWeight' 
                       type="number" 
-                      placeholder="Enter A1c reading (ex. 7)"
+                      placeholder="Enter glucose reading (ex. 104)"
                       className="a1c-input"
                     />
                     </div>
@@ -324,7 +324,7 @@ export default class FitstackProfile extends Component {
         </div>
         <div id="deleteWeights">
           <div className="btn btn-primary dash-add" id="save-weight" onClick={this.saveWeight}>
-            Add A1c reading
+            Add glucose reading
           </div>
           &nbsp;
           <div className="btn btn-primary dash-delete" id="delete-button" onClick={this.deleteList}>
