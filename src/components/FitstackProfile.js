@@ -230,12 +230,8 @@ export default class FitstackProfile extends Component {
         let w = log.weight
         const d = log.date
         const u = log.units
-        if (u != units) {
-          if (u === 'Yes') {
+         if (u != units) {
             w *= 2.2
-          } else if (u === 'No') {
-            w /= 2.2 
-          }
         }
         w = parseInt(w)
         if (w && d) {
