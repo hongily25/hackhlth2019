@@ -322,11 +322,11 @@ export default class FitstackProfile extends Component {
                       <form>
                         <label>
                           <input name="foot" type="radio" value="yes" />
-                          Yes
+                          <span className="foot">Yes</span>
                         </label>
                         <label className="noFoot">
                           <input name="foot" type="radio" value="no" />
-                          No
+                          <span className="foot">No</span>
                         </label>
                       </form>
                     </div>
