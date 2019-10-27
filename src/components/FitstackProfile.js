@@ -269,9 +269,8 @@ export default class FitstackProfile extends Component {
                 <table className="table dash-table">
                   <thead className="thead-dark">
                     <tr>
-                      <th>Weight</th>
+                      <th>A1c Number</th>
                       <th>Date</th>
-                      <th>Units</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -279,7 +278,6 @@ export default class FitstackProfile extends Component {
                       return <tr key={i}>
                         <td>{row.weight}</td>
                         <td>{row.date}</td>
-                        <td>{row.units}</td>
                       </tr>
                     })}
                   </tbody>
