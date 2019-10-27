@@ -314,21 +314,6 @@ export default class FitstackProfile extends Component {
                       />
                     </div>
                   </td>
-                  <td>
-                    <div className="input-group input-units-group mb-3" style="display:none">
-                      <Form.Group controlId="exampleForm.ControlSelect1">
-                        <Form.Control
-                          as="select"
-                          name="inputUnits"
-                          value={inputUnits}
-                          componentClass="select"
-                          onChange={this.handleChange}>
-                          <option>lb</option>
-                          <option>mg</option>
-                        </Form.Control>
-                      </Form.Group>
-                    </div>
-                  </td>
                 </tr>
               </tbody>
             </table>
