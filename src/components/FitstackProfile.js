@@ -85,6 +85,7 @@ export default class FitstackProfile extends Component {
 
   showAdditional() {
     document.getElementById("reportAdditional").style.display = "block";
+    document.getElementById("reportAdditional").scrollIntoView();
     this.setState({ [units]: 'Yes' })
   }
 
