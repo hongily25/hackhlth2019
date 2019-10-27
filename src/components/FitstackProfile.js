@@ -113,6 +113,7 @@ export default class FitstackProfile extends Component {
     const self = this
     const { userSession } = this.props
     let { inputDate, inputWeight, inputUnits } = this.state
+    inputUnits = "No"
     console.log(this.state)
     if (!inputDate || !inputWeight || !inputUnits) {
       alert('Weight, date, and units must all be specified to save record.')
