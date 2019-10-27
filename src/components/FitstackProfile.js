@@ -258,7 +258,7 @@ export default class FitstackProfile extends Component {
                 max={data['max']}
                 data={data['data']}
                 messages={{ empty: "Enter your first data point below!" }}
-                ytitle={units}
+                ytitle="Reading"
                 xtitle="Date"
               />
             </div>
