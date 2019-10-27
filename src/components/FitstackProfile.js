@@ -271,6 +271,7 @@ export default class FitstackProfile extends Component {
                     <tr>
                       <th>Glucose Reading</th>
                       <th>Date</th>
+                      <th>Checked Foot</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -278,6 +279,7 @@ export default class FitstackProfile extends Component {
                       return <tr key={i}>
                         <td>{row.weight}</td>
                         <td>{row.date}</td>
+                        <td>Yes</td>
                       </tr>
                     })}
                   </tbody>
