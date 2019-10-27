@@ -85,10 +85,12 @@ export default class FitstackProfile extends Component {
 
   showAdditional() {
     document.getElementById("reportAdditional").style.display = "block";
+    this.setState({ [units]: 'Yes' })
   }
 
   hideAdditional() {
     document.getElementById("reportAdditional").style.display = "none";
+    this.setState({ [units]: 'No' })
   }
 
   listWeight() {
