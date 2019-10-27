@@ -63,6 +63,8 @@ export default class FitstackProfile extends Component {
     super(props)
     this.handleChange = this.handleChange.bind(this)
     this.handleDateChange = this.handleDateChange.bind(this)
+    this.handleFeetChange = this.handleFeetChange.bind(this)
+    this.showAdditional = this.showAdditional.bind(this)
     this.saveWeight = this.saveWeight.bind(this)
     this.deleteList = this.deleteList.bind(this)
   }
@@ -75,6 +77,13 @@ export default class FitstackProfile extends Component {
 
   handleDateChange(inputDate) {
     this.setState({inputDate})
+  }
+
+  handleFeetChange(inputFeet) {
+  }
+
+  showAdditional() {
+    document.getElementById("reportAdditional").style.display = "block";
   }
 
   listWeight() {
@@ -269,9 +278,9 @@ export default class FitstackProfile extends Component {
                 <table className="table dash-table">
                   <thead className="thead-dark">
                     <tr>
-                      <th>Glucose reading</th>
+                      <th>Glucose Level</th>
                       <th>Date</th>
-                      <th>Foot checked</th>
+                      <th>Foot Checked</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -323,7 +332,7 @@ export default class FitstackProfile extends Component {
                     <div className="feetRadio">
                       <form>
                         <label>
-                          <input name="foot" type="radio" value="yes" />
+                          <input name="foot" type="radio" value="yes" onClick={this.showAdditional}/>
                           <span className="foot">Yes</span>
                         </label>
                         <label className="noFoot">

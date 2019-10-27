@@ -246,3 +246,7 @@ body {
 .weight-table {
   width: 100%;
 }
+
+#reportAdditional {
+  display: none;
+}
