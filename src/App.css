@@ -79,7 +79,7 @@ body {
 }
 
 .a1c-input {
-  width: 20rem;
+  width: 30rem;
 } 
 
 /* Avatar */
@@ -241,4 +241,8 @@ body {
 
 .foot {
   margin-left: .5em;
+}
+
+.weight-table {
+  width: 100%;
 }
