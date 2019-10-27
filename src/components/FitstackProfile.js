@@ -318,20 +318,18 @@ export default class FitstackProfile extends Component {
                 </tr>
                 <tr>
                   <p>Did you check your feet?</p>
-                  <form>
                     <div className="radio">
                       <label>
-                        <input className="form-control" type="radio" value="option1" checked={this.state.selectedOption === 'option1'} />
+                        <input className="form-control" type="radio" value="yes" />
                         Yes
                       </label>
                     </div>
                     <div className="radio">
                       <label>
-                        <input className="form-control" type="radio" value="option2" checked={this.state.selectedOption === 'option2'} />
+                        <input className="form-control" type="radio" value="no" />
                         No
                       </label>
                     </div>
-                  </form>
                 </tr>
               </tbody>
             </table>
