@@ -1,5 +1,5 @@
 {
-  "short_name": "Sweet Track",
+  "short_name": "First Step",
   "name": "A1c weight tracker",
   "icons": [
     {
@@ -8,7 +8,7 @@
       "type": "image/x-icon"
     }
   ],
-  "start_url": "https://fitstack.space",
+  "start_url": "https://agitated-meitner-215c70.netlify.com/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
