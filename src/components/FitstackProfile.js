@@ -269,8 +269,9 @@ export default class FitstackProfile extends Component {
                 <table className="table dash-table">
                   <thead className="thead-dark">
                     <tr>
-                      <th>Glucose Reading</th>
+                      <th>Glucose reading</th>
                       <th>Date</th>
+                      <th>Foot checked</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -278,6 +279,7 @@ export default class FitstackProfile extends Component {
                       return <tr key={i}>
                         <td>{row.weight}</td>
                         <td>{row.date}</td>
+                        <td>Yes</td>
                       </tr>
                     })}
                   </tbody>
