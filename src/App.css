@@ -78,6 +78,10 @@ body {
   background-color: #2C96FF;
 }
 
+.a1c-input {
+  width: 250px;
+} 
+
 /* Avatar */
 .avatar {
   width: 100px;

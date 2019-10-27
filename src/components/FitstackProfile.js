@@ -300,8 +300,8 @@ export default class FitstackProfile extends Component {
                       onChange={this.handleChange} 
                       name='inputWeight' 
                       type="number" 
-                      placeholder="Enter A1c number (ex. 7)" 
-                      className=""
+                      placeholder="Enter A1c number (ex. 7)"
+                      className="a1c-input"
                     />
                     </div>
                   </td>
@@ -310,7 +310,7 @@ export default class FitstackProfile extends Component {
                   <td>
                     <div className="input-group mb-3">
                       <DatePicker
-                        className="date-picker form-control"
+                        className="date-picker form-control a1c-input"
                         placeholderText="Enter date"
                         selected={inputDate}
                         onChange={this.handleDateChange}
