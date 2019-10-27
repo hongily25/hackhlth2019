@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import * as blockstack from "blockstack"
 import FitstackProfile from "./FitstackProfile";
 
-import logo from './../assets/fit_logo.png'
+import logo from './../assets/FirstStepLogo.png'
 
 const appConfig = new blockstack.AppConfig(['store_write', 'publish_data','email'])
 const userSession = new blockstack.UserSession({ appConfig })
