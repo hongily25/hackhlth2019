@@ -227,6 +227,10 @@ body {
   justify-content: center;
 }
 
-#deleteWeights, #reportAdditional {
+#deleteWeights {
   margin-bottom: 1em;
+}
+
+#reportAdditional {
+  margin-bottom: 3em;
 }

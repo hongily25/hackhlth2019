@@ -318,14 +318,14 @@ export default class FitstackProfile extends Component {
                 </tr>
                 <tr>
                   <p>Did you check your feet?</p>
-                    <div className="radio">
+                    <div className="feetRadio">
                       <form>
                         <label>
-                          <input className="form-control" type="radio" value="yes" />
+                          <input name="foot" className="form-control" type="radio" value="yes" />
                           Yes
                         </label>
                         <label>
-                          <input className="form-control" type="radio" value="no" />
+                          <input name="foot" className="form-control" type="radio" value="no" />
                           No
                         </label>
                       </form>
