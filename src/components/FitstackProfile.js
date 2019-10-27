@@ -134,7 +134,7 @@ export default class FitstackProfile extends Component {
     this.setState({
       inputDate: '',
       inputWeight: '',
-      inputUnits: 'lb'
+      inputUnits: 'reading'
     })
   }
 
@@ -209,9 +209,9 @@ export default class FitstackProfile extends Component {
         const d = log.date
         const u = log.units
         if (u != units) {
-          if (u === 'kg') {
+          if (u === 'reading') {
             w *= 2.2
-          } else if (u === 'lb') {
+          } else if (u === 'reading') {
             w /= 2.2 
           }
         }
@@ -269,7 +269,7 @@ export default class FitstackProfile extends Component {
                 <table className="table dash-table">
                   <thead className="thead-dark">
                     <tr>
-                      <th>A1c Number</th>
+                      <th>A1c Reading</th>
                       <th>Date</th>
                     </tr>
                   </thead>
@@ -298,7 +298,7 @@ export default class FitstackProfile extends Component {
                       onChange={this.handleChange} 
                       name='inputWeight' 
                       type="number" 
-                      placeholder="Enter A1c number (ex. 7)"
+                      placeholder="Enter A1c reading (ex. 7)"
                       className="a1c-input"
                     />
                     </div>
@@ -324,7 +324,7 @@ export default class FitstackProfile extends Component {
         </div>
         <div id="deleteWeights">
           <div className="btn btn-primary dash-add" id="save-weight" onClick={this.saveWeight}>
-            Add A1c number
+            Add A1c reading
           </div>
           &nbsp;
           <div className="btn btn-primary dash-delete" id="delete-button" onClick={this.deleteList}>
