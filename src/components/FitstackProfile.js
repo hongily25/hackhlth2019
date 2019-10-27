@@ -316,6 +316,23 @@ export default class FitstackProfile extends Component {
                     </div>
                   </td>
                 </tr>
+                <tr>
+                  <p>Did you check your feet?</p>
+                  <form>
+                    <div className="radio">
+                      <label>
+                        <input className="form-control" type="radio" value="option1" checked={this.state.selectedOption === 'option1'} />
+                        Yes
+                      </label>
+                    </div>
+                    <div className="radio">
+                      <label>
+                        <input className="form-control" type="radio" value="option2" checked={this.state.selectedOption === 'option2'} />
+                        No
+                      </label>
+                    </div>
+                  </form>
+                </tr>
               </tbody>
             </table>
 
@@ -324,13 +341,15 @@ export default class FitstackProfile extends Component {
         </div>
         <div id="deleteWeights">
           <div className="btn btn-primary dash-add" id="save-weight" onClick={this.saveWeight}>
-            Add glucose reading
+            Add entry
           </div>
           &nbsp;
           <div className="btn btn-primary dash-delete" id="delete-button" onClick={this.deleteList}>
             Delete all
           </div>
+          &nbsp;
         </div>
+
       </div>
     )
   }
