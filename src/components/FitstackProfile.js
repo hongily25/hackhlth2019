@@ -113,7 +113,11 @@ export default class FitstackProfile extends Component {
     const self = this
     const { userSession } = this.props
     let { inputDate, inputWeight, inputUnits } = this.state
-    inputUnits = "No"
+    if (document.getElementById('yes-radio').checked) {
+      inputUnits = "Yes"
+    } else {
+      inputUnits = "No"
+    }
     console.log(this.state)
     if (!inputDate || !inputWeight || !inputUnits) {
       alert('Weight, date, and units must all be specified to save record.')
@@ -339,11 +343,11 @@ export default class FitstackProfile extends Component {
                   <p>Did you check your feet?</p>
                     <div className="feetRadio">
                         <label>
-                          <input name="foot" type="radio" value="Yes" onClick={this.showAdditional} />
+                          <input name="foot" type="radio" value="Yes" id="yes-radio" onClick={this.showAdditional} />
                           <span className="foot">Yes</span>
                         </label>
                         <label className="noFoot">
-                          <input name="foot" type="radio" value="No" onClick={this.hideAdditional} />
+                          <input name="foot" type="radio" value="No" id="no-radio" onClick={this.hideAdditional} />
                           <span className="foot">No</span>
                         </label>
                     </div>
