@@ -65,6 +65,7 @@ export default class FitstackProfile extends Component {
     this.handleDateChange = this.handleDateChange.bind(this)
     this.handleFeetChange = this.handleFeetChange.bind(this)
     this.showAdditional = this.showAdditional.bind(this)
+    this.hideAdditional = this.hideAdditional.bind(this)
     this.saveWeight = this.saveWeight.bind(this)
     this.deleteList = this.deleteList.bind(this)
   }
@@ -84,6 +85,10 @@ export default class FitstackProfile extends Component {
 
   showAdditional() {
     document.getElementById("reportAdditional").style.display = "block";
+  }
+
+  hideAdditional() {
+    document.getElementById("reportAdditional").style.display = "none";
   }
 
   listWeight() {
@@ -332,11 +337,11 @@ export default class FitstackProfile extends Component {
                     <div className="feetRadio">
                       <form>
                         <label>
-                          <input name="foot" type="radio" value="yes" onClick={this.showAdditional}/>
+                          <input name="foot" type="radio" value="yes" onClick={this.showAdditional} />
                           <span className="foot">Yes</span>
                         </label>
                         <label className="noFoot">
-                          <input name="foot" type="radio" value="no" />
+                          <input name="foot" type="radio" value="no" onClick={this.hideAdditional} />
                           <span className="foot">No</span>
                         </label>
                       </form>
