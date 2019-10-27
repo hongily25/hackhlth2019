@@ -76,7 +76,7 @@ export default class Home extends Component {
               </p>
             </div>
             {!profile && <div>
-              <p className='landing-slogan-text'>Track your A1c and assess your risk for foot ulcers compared to your local demographics.</p>
+              <p className='landing-slogan-text'>Track your glucose levels and assess your risk for foot ulcers compared to your local demographics.</p>
             </div>}
             <div>
               {profile && <FitstackProfile profile={profile} userSession={userSession}/>}
